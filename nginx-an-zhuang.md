@@ -1,24 +1,24 @@
-## Centos下安装
+# 基本安装
 
-##### 一、基础环境安装
+## 一、基础环境安装
 
-###### 安装make
+### 安装make
 
-```shell
+```bash
 yum -y install gcc automake autoconf libtool make
 ```
 
-###### 安装gcc++
+### 安装gcc++
 
-```shell
+```text
 yum install gcc gcc-c++
 ```
 
-##### 二、Nginx安装
+## 二、Nginx安装
 
-###### 安装pcre
+### 安装pcre
 
-```shell
+```text
 cd /usr/local/src
 wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz 
 tar -zxvf pcre-8.39.tar.gz
@@ -28,9 +28,9 @@ make
 make install
 ```
 
-###### 安装zlib
+### 安装zlib
 
-```shell
+```text
 cd /usr/local/src
 wget http://zlib.net/zlib-1.2.11.tar.gz
 tar -zxvf zlib-1.2.11.tar.gz
@@ -40,17 +40,17 @@ make
 make install
 ```
 
-###### 安装OpenSSL（不一定需要）
+### 安装OpenSSL（不一定需要）
 
-```shell
+```text
 cd /usr/local/src
 wget https://www.openssl.org/source/openssl-1.0.1t.tar.gz
 tar -zxvf openssl-1.0.1t.tar.gz
 ```
 
-###### 安装Nginx
+### 安装Nginx
 
-```shell
+```text
 cd /usr/local/src
 wget http://nginx.org/download/nginx-1.17.2.tar.gz
 tar -zxvf nginx-1.17.2.tar.gz
@@ -60,11 +60,11 @@ make
 make install
 ```
 
-##### 三、配置Nginx
+## 三、配置Nginx
 
-###### 代理前端资源
+### 代理前端资源
 
-```shell
+```text
 [root@localhost ~]# cd /usr/local/nginx
 [root@localhost nginx]# vim conf/nginx.conf
 
@@ -156,23 +156,23 @@ http {
 }
 ```
 
-##### 四、启动Nginx
+## 四、启动Nginx
 
-###### 测试Nginx配置文件
+### 测试Nginx配置文件
 
-```shell
+```text
 ./nginx -t
 ```
 
 启动Nginx
 
-```shell
+```text
 ./nginx
 ```
 
 刷新（重新加载）配置信息
 
-```shell
+```text
 ./nginx -s reload
 ```
 
